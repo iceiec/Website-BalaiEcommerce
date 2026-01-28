@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Management - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo1.png" alt="Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin_dashboard.html" class="nav-item">
+                    <span class="icon">&#128202;</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin_bookings.html" class="nav-item">
+                    <span class="icon">&#128197;</span>
+                    <span>Bookings</span>
+                </a>
+                <a href="admin_staff.html" class="nav-item active">
+                    <span class="icon">&#128101;</span>
+                    <span>Staff Management</span>
+                </a>
+                 <a href="admin_reports.html" class="nav-item ">
+                    <span class="icon">&#128203;</span>
+                    <span>Reports</span>
+                </a>
+                <a href="admin_settings.html" class="nav-item">
+                    <span class="icon">&#9965;</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Staff Management</h1>
+                    <p>Add, view, and manage staff accounts.</p>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a href="admin_login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>All Staff Members</h2>
+                        <button class="btn">Add New Staff</button>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Date Added</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Staff Member One</td>
+                                    <td>staff1@resort.com</td>
+                                    <td>Front Desk</td>
+                                    <td>2024-05-10</td>
+                                    <td class="actions">
+                                        <button class="btn-action edit">Edit</button>
+                                        <button class="btn-action delete">Delete</button>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Staff Member Two</td>
+                                    <td>staff2@resort.com</td>
+                                    <td>Housekeeping</td>
+                                    <td>2024-08-15</td>
+                                    <td class="actions">
+                                        <button class="btn-action edit">Edit</button>
+                                        <button class="btn-action delete">Delete</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin_script.js"></script>
+</body>
+</html>

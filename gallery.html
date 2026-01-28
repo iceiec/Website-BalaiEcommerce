@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Balai Alegria</title>
+  <link rel="icon" type="image/png" href="images/logo1.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar solid-bg">
+    <div class="logo"><a href="index.html"><img src="images/logo4.png" alt="Logo"></a></div>
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="accommodations.html">Accommodations</a>
+        <a href="rates.html">Rates & Packages</a>
+        <a href="events.html" >Events</a>
+        <a href="gallery.html" class="active">Gallery</a>
+        <a href="amenities.html">Amenities</a>
+        <a href="contact.html" >Contact Us</a>
+        <a href="my_account.html">My Account</a>
+    </nav>
+    <a href="booking.html" class="book-btn">Book Now</a>
+  </header>
+
+  <section class="page-header" style="background-image: url('images/Resort/OutdoorFam.jpg');">
+    <h1>Visual Stories</h1>
+  </section>
+
+  <main class="container">
+      <h2>Explore Balai Alegria</h2>
+      <p style="max-width: 800px; margin: 20px auto;">
+        Immerse yourself in the beauty of our resort. Browse through our curated galleries to catch a glimpse of the serene ambiance and unforgettable moments that await you.
+      </p>
+
+      <div id="filter-buttons">
+        <button class="btn active" data-filter="all">Show All</button>
+        <button class="btn" data-filter="resort">The Resort</button>
+        <button class="btn" data-filter="rooms">Accommodations</button>
+        <button class="btn" data-filter="events">Events</button>
+      </div>
+
+      <div class="image-gallery">
+        <!-- Resort -->
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Pool1.jpg" alt="Pool1">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Pool2.jpg" alt="Pool2">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/CafeDeAlegria.jpg" alt="Cafe De Alegria">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Cabana.jpg" alt="Cabana">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Outdoor.jpg" alt="Outdoor2">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Playground1.jpg" alt="Playground1">
+        </div> 
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Playground2.jpg" alt="Playground2">
+        </div>
+        <div class="gallery-item" data-category="resort">
+          <img src="images/Resort/Zipline.jpg" alt="Zipline">
+        </div>
+        
+
+        <!-- Rooms -->
+          <!-- Family Kubo -->
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo1.jpg" alt="Family Kubo1">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo2.jpg" alt="Family Kubo2">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo3.jpg" alt="Family Kubo3">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo4.jpg" alt="Family Kubo4">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo5.jpg" alt="Family Kubo5">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo6.jpg" alt="Family Kubo6">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Family Kubo/FamilyKubo7.jpg" alt="Family Kubo7">
+          </div>
+          <!-- Mini Kubo -->
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Mini Kubo/MiniKubo1.JPG" alt="Mini Kubo1">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Mini Kubo/MiniKubo2.JPG" alt="Mini Kubo2">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Mini Kubo/MiniKubo3.JPG" alt="Mini Kubo3">
+          </div>
+           <div class="gallery-item" data-category="rooms">
+            <img src="images/Mini Kubo/MiniKubo4.JPG" alt="Mini Kubo4">
+          </div>
+          <div class="gallery-item" data-category="rooms">
+            <img src="images/Mini Kubo/MiniKubo5.JPG" alt="Mini Kubo5">
+          </div>
+
+        <!-- Events -->
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event1.jpg" alt="Event1">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event2.jpg" alt="Event2">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event3.jpg" alt="Event3">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event4.jpg" alt="Event4">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event5.jpg" alt="Event5">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event6.jpg" alt="Event6">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Event7.jpg" alt="Event7">
+        </div>
+        <div class="gallery-item" data-category="events">
+          <img src="images/Event/Couple.jpg" alt="Couple">
+        </div>
+
+      </div>
+  </main>
+
+  <footer>
+     <div class="footer-logo"><img src="images/logo1.png" alt="Footer Logo"></div>
+      <p>Lumbac, Pulilan, Bulacan</p>
+      <p>Email: balaialegria@gmail.com</p>
+      <p>Phone: +63 969 621 1613 | +63 917 875 8765</p>
+      <div class="social">
+      <a href="https://www.facebook.com/balaialegria">Facebook</a> |
+      <a href="https://www.instagram.com/balaialegria/">Instagram</a> |
+      <a href="https://www.tiktok.com/@balai.alegria">Tiktok</a>
+      </div>
+  </footer>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

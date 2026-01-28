@@ -1,0 +1,868 @@
+/* Balai Alegria - FINAL Unified Stylesheet */
+
+/* --- Core & Typography --- */
+/* Add this to the top of style.css */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* --- Core & Typography --- */ 
+
+:root {
+  --primary-color: #c3996c;
+  --primary-hover: #a77c50;
+  --dark-text: #2e2e2e;
+  --body-text: #3a3a3a;
+  --light-bg: #fcfaf8;
+  --white: #ffffff;
+  --footer-bg: #2e2e2e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  background-color: var(--white);
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--dark-text);
+}
+
+p {
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* --- Reusable Button --- */
+.btn {
+  background: var(--primary-color);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+/* --- Navbar --- */
+/* Base styles for both transparent and solid states */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 1000;
+  transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+  color: var(--white); /* Default for homepage hero */
+}
+.navbar.solid-bg {
+    position: fixed;
+    background-color: var(--white);
+    color: var(--dark-text);
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.navbar .logo img {
+  height: 100px;
+  width: auto;
+  filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.6));
+  transition: height 0.4s ease;
+}
+.navbar.solid-bg .logo img {
+    height: 80px;
+    filter: none;
+}
+.navbar nav {
+  flex: 1;
+  text-align: center;
+  margin-left: 50px;
+}
+.navbar nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding-bottom: 5px;
+  position: relative;
+}
+.navbar nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+.navbar nav a:hover::after, .navbar nav a.active::after {
+    width: 100%;
+}
+.navbar .book-btn {
+  background: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.navbar .book-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- Hero Slideshow (From index.html) --- */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.slideshow-container .slides {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  filter: sepia(60%) hue-rotate(-10deg) brightness(0.8) saturate(1.2);
+}
+.slideshow-container .slides.active { opacity: 1; }
+.slideshow-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white);
+  text-shadow: 0px 2px 8px rgba(0,0,0,0.7);
+  z-index: 10;
+}
+.slideshow-text h1 { font-size: 3.5rem; margin: 0 0 10px; color: var(--white); }
+.slideshow-text p { font-size: 1.5rem; margin: 0 0 20px; color: var(--white); font-weight: 300;}
+
+/* --- Generic Page Header (For internal pages) --- */
+.page-header {
+    height: 50vh; /* Increased height for more impact */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0px 3px 8px rgba(0,0,0,0.7);
+    position: relative;
+}
+.page-header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35); /* Slightly increased overlay */
+}
+.page-header h1 {
+    font-size: 4rem;
+    color: var(--white);
+    z-index: 1;
+}
+
+/* --- Section Styling --- */
+section { padding: 80px 20px; }
+.light-bg { background: var(--light-bg); }
+
+/* --- Features Section --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  /* subtle border to lift the card */
+  border: 1px solid #f0f0f0;
+}
+
+.feature-icon {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+/* --- Complex Layout Grids (from new pages) --- */
+.about-section, .contact-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    text-align: left;
+}
+.about-section .text-content, .contact-info, .contact-form, .about-section .image-content { flex: 1; }
+.about-section img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.grid-container, .rates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+/* All other grid styles from before remain the same */
+
+
+/* --- Sign In / Register Page Styling --- */
+.login-body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("images/image10.jpg") no-repeat center center/cover;
+}
+.login-box {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 350px;
+}
+.login-box .logo { width: 100px; margin-bottom: 20px; }
+.login-box h2 { margin-bottom: 20px; }
+.login-box input {
+  width: 90%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  outline: none;
+}
+.login-box input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 4px rgba(195, 153, 108, 0.6);
+}
+.login-box .link-text { font-size: 14px; font-weight: 400; color: #333; margin-top: 15px; }
+.login-box .link { color: var(--primary-color); text-decoration: none; margin-left: 5px; font-weight: 500; }
+.login-box .link:hover { color: var(--primary-hover); }
+
+/* --- Footer --- */
+footer {
+  background: var(--footer-bg);
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+}
+footer .footer-logo img { width: 80px; }
+footer p { font-weight: 300; }
+footer .social a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* --- Main Booking Layout --- */
+.booking-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  text-align: left; /* Aligns text inside the columns to the left */
+}
+
+.booking-form {
+  flex: 2; /* Takes up 2/3 of the space */
+}
+
+.booking-summary {
+  flex: 1; /* Takes up 1/3 of the space */
+  background: var(--light-bg);
+  padding: 30px;
+  border-radius: 12px;
+  position: sticky;
+  top: 120px; /* Makes the summary box 'stick' as you scroll */
+}
+
+/* --- Form Sections & Groups --- */
+.form-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.form-section h3 {
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  box-sizing: border-box; /* Important for consistent sizing */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(195, 153, 108, 0.5);
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group .form-group {
+  flex: 1;
+}
+
+/* --- Form Sections & Groups --- */
+.form-section {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.form-section h3 {
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  box-sizing: border-box; /* Important for consistent sizing */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'Lexend', sans-serif;
+}
+
+.form-group input:focus, .form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(195, 153, 108, 0.5);
+}
+
+.input-group {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group .form-group {
+  flex: 1;
+}
+
+/* --- Enhanced Accommodations Page --- */
+.accommodation-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+  margin-top: 60px;
+}
+.accommodation-showcase.reverse {
+  flex-direction: row-reverse;
+}
+.accommodation-image {
+  flex: 1 1 400px;
+}
+.accommodation-image img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.accommodation-details {
+  flex: 1 1 400px;
+}
+.accommodation-details .price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-top: -10px;
+}
+.amenities-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.amenities-list li {
+  display: flex;
+  align-items: center;
+}
+.amenities-list .icon {
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* --- Enhanced Rates & Packages Page --- */
+.package-section {
+  margin-top: 60px;
+  border-top: 1px solid #eee;
+  padding-top: 40px;
+}
+.rate-card-header {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.rate-card .perfect-for {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #777;
+}
+.includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+.includes-list li {
+  margin-bottom: 10px;
+}
+
+/* --- Enhanced Events Page --- */
+.testimonial-section {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+.testimonial-section h2, .testimonial-section h3 {
+  color: var(--white);
+}
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonial blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  border: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+.testimonial cite {
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* --- Interactive Gallery Page --- */
+#filter-buttons {
+  margin: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+#filter-buttons .btn.active {
+  background-color: var(--dark-text);
+  color: var(--white);
+}
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.gallery-item.hide {
+  transform: scale(0.9);
+  opacity: 0;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* --- Enhanced Amenities Page --- */
+.amenities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+.amenity-card-large {
+    background-color: var(--light-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+.amenity-card-large img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+.amenity-card-content {
+    padding: 30px;
+    text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .accommodation-showcase, .accommodation-showcase.reverse {
+    flex-direction: column;
+  }
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add this to your existing style.css file */
+
+.navbar .navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar .nav-link {
+  color: inherit; /* This will be white on transparent, dark on solid */
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--primary-color);
+}
+
+.navbar .btn-nav {
+  padding: 8px 18px; /* Slightly smaller for navbar */
+  font-size: 14px;
+}
+
+/* --- Modal Pop-up --- */
+
+/* This class will be added to the body via JS to prevent background scrolling */
+.body-no-scroll {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  display: none; /* Modals are hidden by default */
+}
+
+.modal.active {
+  display: block;
+  transform: scale(1);
+}
+
+/* We reuse the .login-box for consistency, so no new styles are needed for the box itself */
+/* We just remove the background image from the body when the modal is open, which is handled by the backdrop */
+
+.close-modal-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--white);
+  color: var(--dark-text);
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 2010;
+}
+
+/* --- My Account Page --- */
+
+.account-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+
+/* Account Sidebar */
+.account-sidebar {
+    flex: 0 0 250px; /* Do not grow, do not shrink, base width of 250px */
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    padding: 15px 0;
+}
+.account-nav .nav-link {
+    display: block;
+    padding: 15px 25px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    border-left: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+.account-nav .nav-link:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+.account-nav .nav-link.active {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    border-left-color: var(--primary-color);
+}
+
+/* Account Content Area */
+.account-content {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+.content-view {
+    display: none; /* All views are hidden by default */
+}
+.content-view.active {
+    display: block; /* Only the active view is shown */
+}
+.view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.view-header h2 {
+    margin: 0;
+}
+.sort-by {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-family: inherit;
+}
+
+/* Booking Card (Inspired by your screenshot) */
+.booking-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+.card-main-header {
+    padding: 15px 20px;
+    background-color: var(--light-bg);
+    color: var(--text-light);
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+}
+.booking-details {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.booking-details img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.booking-details .info {
+    flex: 2;
+}
+.booking-details .info h4 { margin: 0 0 5px; font-size: 18px; }
+.booking-details .info p { margin: 0; color: var(--text-light); }
+.booking-details .payment-info {
+    flex: 1;
+    text-align: right;
+}
+.payment-info h4 { margin: 0 0 5px; font-size: 18px; font-weight: 600; }
+.payment-info p { margin: 0; color: var(--text-light); }
+.card-footer {
+    padding: 20px;
+    background-color: var(--light-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.status-indicator {
+    font-weight: 500;
+}
+.status-indicator span {
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: var(--white);
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.status-indicator.confirmed span { background-color: green; }
+.status-indicator.completed span { background-color: #17a2b8; }
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+.btn-secondary, .btn-primary, .btn-danger {
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    background-color: var(--white);
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+}
+.btn-danger {
+    color: var(--negative);
+    background-color: rgba(207, 63, 63, 0.815);
+    color: var(--white);
+}
+
+/* Settings Form */
+.settings-form {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+/* --- Feedback Page --- */
+.feedback-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    text-align: center;
+}
+.feedback-container h2 {
+    margin-top: 0;
+}
+.feedback-form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse; /* This makes the hover effect work correctly */
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 20px;
+}
+.star {
+    font-size: 40px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.star:hover,
+.star:hover ~ .star,
+.star.selected,
+.star.selected ~ .star {
+    color: var(--primary-color);
+}

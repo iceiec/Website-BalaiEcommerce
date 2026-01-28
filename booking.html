@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Your Booking - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar solid-bg">
+        <div class="logo"><a href="homepage.html"><img src="images/logo4.png" alt="Logo"></a></div>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#about">About</a>
+            <a href="accommodations.html">Accommodations</a>
+            <a href="rates.html">Rates & Packages</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="my_account.html">My Account</a>
+        </nav>
+        <a href="booking.html" class="book-btn">Book Now</a>
+    </header>
+
+    <div class="page-header" style="background-image: url('images/image5.jpg');">
+        <h1>Complete Your Booking</h1>  
+    </div>
+
+    <main class="container">
+        <div class="booking-layout">
+            <div class="booking-form">
+                <form id="booking-form">
+                    <div class="form-section">
+                        <h3>1. Your Stay</h3>
+                        <div class="input-group">
+                            <div class="form-group">
+                                <label for="check-in">Check-in Date</label>
+                                <input type="date" id="check-in" name="check-in" value="2025-10-26" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="check-out">Check-out Date</label>
+                                <input type="date" id="check-out" name="check-out" value="2025-10-28" required>
+                            </div>
+                        </div>
+                         <div class="form-group">
+                            <label for="guests">Guests</label>
+                            <select id="guests" name="guests" required>
+                                <option value="1">1 Guest</option>
+                                <option value="2" selected>2 Guests</option>
+                                <option value="3">3 Guests</option>
+                                <option value="4">4 Guests</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h3>2. Guest Information</h3>
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" placeholder="Juan Dela Cruz" required>
+                        </div>
+                        <div class="input-group">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="juan@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+63 917 123 4567" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="pay-button" class="btn" style="width: 100%; padding: 15px; font-size: 18px;">
+                        Proceed to Payment
+                    </button>
+                </form>
+            </div>
+
+            <aside class="booking-summary">
+                <h3>Booking Summary</h3>
+                <img src="images/image3.jpg" alt="Villa Santorini" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+                <h4>Villa Santorini</h4>
+                <div class="summary-details">
+                    <div class="detail-row">
+                        <span>2 nights (Total)</span>
+                        <span id="total-amount" data-amount="2800000">₱28,000.00</span>
+                    </div>
+                     <div class="detail-row">
+                        <span>Taxes & Fees</span>
+                        <span>Included</span>
+                    </div>
+                </div>
+                <div class="summary-total">
+                    <span>Total</span>
+                    <span>₱28,000.00</span>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        </footer>
+    
+    <script src="booking-paymongo.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings Management - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo1.png" alt="Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin_dashboard.html" class="nav-item">
+                    <span class="icon">&#128202;</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin_bookings.html" class="nav-item active">
+                    <span class="icon">&#128197;</span>
+                    <span>Bookings</span>
+                </a>
+                <a href="admin_staff.html" class="nav-item">
+                    <span class="icon">&#128101;</span>
+                    <span>Staff Management</span>
+                </a>
+                 <a href="admin_reports.html" class="nav-item">
+                    <span class="icon">&#128203;</span>
+                    <span>Reports</span>
+                </a>
+                <a href="admin_settings.html" class="nav-item">
+                    <span class="icon">&#9965;</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Bookings Management</h1>
+                    <p>Confirm, cancel, and view all guest reservations.</p>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a href="admin_login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>All Bookings</h2>
+                        <div class="filter-controls">
+                            <input type="text" placeholder="Search by guest name...">
+                            <select>
+                                <option value="">All Statuses</option>
+                                <option value="confirmed">Confirmed</option>
+                                <option value="pending">Pending</option>
+                                <option value="completed">Completed</option>
+                                <option value="cancelled">Cancelled</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Dates</th>
+                                    <th>Accommodation</th>
+                                    <th>Total Paid</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Maria Dela Cruz</td>
+                                    <td>Oct 15 - Oct 16, 2025</td>
+                                    <td>Family Kubo</td>
+                                    <td>₱17,500.00</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td class="actions">
+                                        <button class="btn-action view" title="View Details">&#128065;</button>
+                                        <button class="btn-action cancel" title="Cancel Booking">&#10060;</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>John Smith</td>
+                                    <td>Oct 20 - Oct 21, 2025</td>
+                                    <td>2 Mini Kubo</td>
+                                    <td>₱12,000.00</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td class="actions">
+                                        <button class="btn-action view" title="View Details">&#128065;</button>
+                                        <button class="btn-action confirm" title="Confirm Booking">&#10004;</button>
+                                        <button class="btn-action cancel" title="Cancel Booking">&#10060;</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Robert Lee</td>
+                                    <td>Nov 10 - Nov 12, 2025</td>
+                                    <td>Family Kubo</td>
+                                    <td>₱17,500.00</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td class="actions">
+                                        <button class="btn-action view" title="View Details">&#128065;</button>
+                                    </td>
+                                </tr>
+                                 <tr>
+                                    <td>Samantha Chen</td>
+                                    <td>Dec 01, 2025</td>
+                                    <td>Wedding</td>
+                                    <td>₱50,000.00</td>
+                                    <td><span class="status cancelled">Cancelled</span></td>
+                                    <td class="actions">
+                                        <button class="btn-action view" title="View Details">&#128065;</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin_script.js"></script>
+</body>
+</html>

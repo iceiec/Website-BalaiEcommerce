@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo1.png" alt="Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin_dashboard.html" class="nav-item active">
+                    <span class="icon">&#128202;</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin_bookings.html" class="nav-item ">
+                    <span class="icon">&#128197;</span>
+                    <span>Bookings</span>
+                </a>
+                <a href="admin_staff.html" class="nav-item">
+                    <span class="icon">&#128101;</span>
+                    <span>Staff Management</span>
+                </a>
+                 <a href="admin_reports.html" class="nav-item">
+                    <span class="icon">&#128203;</span>
+                    <span>Reports</span>
+                </a>
+                <a href="admin_settings.html" class="nav-item">
+                    <span class="icon">&#9965;</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Admin Dashboard</h1>
+                    <p>Overview of resort operations and key metrics.</p>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a href="admin_login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <h3>Monthly Revenue</h3>
+                        <p>₱ 450,500.00</p>
+                        <span class="kpi-change positive">+15% from last month</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>New Bookings</h3>
+                        <p>32</p>
+                        <span class="kpi-change positive">+5 from last month</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Pending Requests</h3>
+                        <p>4</p>
+                        <span class="kpi-change neutral">Awaiting action</span>
+                    </div>
+                    <div class="kpi-card">
+                        <h3>Occupancy Rate</h3>
+                        <p>75%</p>
+                        <span class="kpi-change negative">-5% from last month</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Booking Trends (Last 6 Months)</h2>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="bookingChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                         <div class="card-header">
+                            <h2>Recent Activity</h2>
+                        </div>
+                        <ul class="activity-feed">
+                            <li><strong>Maria Dela Cruz</strong> confirmed booking for Villa Santorini.</li>
+                            <li><strong>John Smith</strong> submitted a new booking request.</li>
+                            <li>New staff account created for 'staff_jane'.</li>
+                            <li><strong>Robert Lee's</strong> booking status changed to 'Completed'.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin_script.js"></script>
+</body>
+</html>

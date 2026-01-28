@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Balai Alegria Admin</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin_style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo1.png" alt="Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin_dashboard.html" class="nav-item">
+                    <span class="icon">&#128202;</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="admin_bookings.html" class="nav-item">
+                    <span class="icon">&#128197;</span>
+                    <span>Bookings</span>
+                </a>
+                <a href="admin_staff.html" class="nav-item">
+                    <span class="icon">&#128101;</span>
+                    <span>Staff Management</span>
+                </a>
+                 <a href="admin_reports.html" class="nav-item active">
+                    <span class="icon">&#128203;</span>
+                    <span>Reports</span>
+                </a>
+                <a href="admin_settings.html" class="nav-item">
+                    <span class="icon">&#9965;</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Business Reports</h1>
+                    <p>Analyze revenue, bookings, and occupancy trends.</p>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, Admin</span>
+                    <a href="admin_login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <section class="content-section">
+                 <div class="dashboard-grid">
+                    <div class="card">
+                        <div class="card-header"><h2>Monthly Revenue</h2></div>
+                        <div class="card-body">
+                            <canvas id="revenueChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card">
+                         <div class="card-header"><h2>Bookings by Accommodation</h2></div>
+                         <div class="card-body">
+                            <canvas id="accommodationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin_script.js"></script>
+</body>
+</html>

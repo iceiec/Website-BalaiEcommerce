@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Balai Alegria Staff</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="staff_style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/logo1.png" alt="Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">
+                    <span class="icon">&#128197;</span> <span>Bookings</span>
+                </a>
+                </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <div class="header-title">
+                    <h1>Booking Management</h1>
+                    <p>View and manage all guest booking requests and statuses.</p>
+                </div>
+                <div class="user-info">
+                    <span>Welcome, Staff Member</span>
+                    <a href="staff_login.html" class="logout-btn">Logout</a>
+                </div>
+            </header>
+
+            <section class="content-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h2>All Bookings</h2>
+                        <input type="text" id="searchInput" placeholder="Search by guest name...">
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Guest Name</th>
+                                    <th>Check-in</th>
+                                    <th>Check-out</th>
+                                    <th>Accommodation</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookingsTable">
+                                <tr>
+                                    <td>Maria Dela Cruz</td>
+                                    <td>2025-10-15</td>
+                                    <td>2025-10-16</td>
+                                    <td>Family Kubo</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td><button class="btn btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>John Smith</td>
+                                    <td>2025-10-20</td>
+                                    <td>2025-10-21</td>
+                                    <td>2 Mini Kubo</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><button class="btn btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Angela Reyes</td>
+                                    <td>2025-11-01</td>
+                                    <td>2025-11-02</td>
+                                    <td>Family Kubo</td>
+                                    <td><span class="status confirmed">Confirmed</span></td>
+                                    <td><button class="btn btn-sm">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Robert Lee</td>
+                                    <td>2025-11-10</td>
+                                    <td>2025-11-11</td>
+                                    <td>Mini Kubo</td>
+                                    <td><span class="status completed">Completed</span></td>
+                                    <td><button class="btn btn-sm">View Details</button></td>
+                                </tr>
+                                 <tr>
+                                    <td>Samantha Chen</td>
+                                    <td>2025-12-01</td>
+                                    <td>2025-12-02</td>
+                                    <td>2 Family Kubo</td>
+                                    <td><span class="status cancelled">Cancelled</span></td>
+                                    <td><button class="btn btn-sm">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="staff_script.js"></script>
+</body>
+</html> 

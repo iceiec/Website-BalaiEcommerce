@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <header class="navbar solid-bg">
+        <div class="logo"><a href="homepage.html"><img src="images/logo4.png" alt="Logo"></a></div>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="accommodations.html">Accommodations</a>
+            <a href="rates.html">Rates & Packages</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="my_account.html" class="active">My Account</a>
+        </nav>
+        <a href="booking.html" class="book-btn">Book Now</a>
+    </header>
+
+    <section class="page-header" style="background-image: url('images/Mini Kubo/MiniKubo1.jpg');">
+        <h1>My Account</h1>
+    </section>
+
+    <main class="container account-container">
+        <aside class="account-sidebar">
+            <nav class="account-nav">
+                <a href="#" class="nav-link active" data-target="bookings-view">My Bookings</a>
+                <a href="#" class="nav-link" data-target="profile-view">Profile Settings</a>
+                <a href="#" class="nav-link" data-target="password-view">Password Manager</a>
+                <a href="index.html" class="nav-link">Logout</a>
+                
+            </nav>
+        </aside>
+
+        <section class="account-content">
+
+            <div id="bookings-view" class="content-view active">
+                <div class="view-header">
+                    <h2>My Bookings (2)</h2>
+                    <select class="sort-by">
+                        <option>Sort by: All</option>
+                        <option>Sort by: Upcoming</option>
+                        <option>Sort by: Completed</option>
+                    </select>
+                </div>
+
+                <div class="booking-card">
+                    <div class="card-main-header">
+                        <span>Booking ID #SDOT1254FD</span>
+                        <span>Booked on 24 September 2025</span>
+                    </div>
+                    <div class="booking-details">
+                        <img src="images/Family Kubo/FamilyKubo1.jpg" alt="FamilyKubo1">
+                        <div class="info">
+                            <h4>Family Kubo</h4>
+                            <p>6 Guests, 1 Night</p>
+                            <p>Check-in: 15 October 2025</p>
+                        </div>
+                        <div class="payment-info">
+                            <h4>₱17,500.00</h4>
+                            <p>Paid via PayMongo</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="status-indicator confirmed">
+                            <span>Confirmed</span> Your booking is confirmed.
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-secondary">View Invoice</button>
+                            <button class="btn-danger">Request Cancellation</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-card">
+                    <div class="card-main-header">
+                        <span>Booking ID #SDOT7412DF</span>
+                        <span>Booked on 10 February 2025</span>
+                    </div>
+                    <div class="booking-details">
+                         <img src="images/Family Kubo/FamilyKubo1.jpg" alt="FamilyKubo1">
+                        <div class="info">
+                            <h4>Family Kubo</h4>
+                            <p>8 Guests, 1 Night</p>
+                            <p>Check-out: 14 February 2025</p>
+                        </div>
+                        <div class="payment-info">
+                            <h4>₱17,500.00</h4>
+                            <p>Paid via PayMongo</p>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="status-indicator completed">
+                            <span>Completed</span> Thank you for staying with us.
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn-secondary">View Invoice</button>
+                            <button id="leave-feedback-btn" class="btn-primary">Leave Feedback</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="profile-view" class="content-view">
+                <div class="view-header">
+                    <h2>Profile Settings</h2>
+                </div>
+                <form class="settings-form">
+                    <div class="input-group">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" value="Juan Dela Cruz">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" value="juan@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+63 917 123 4567">
+                    </div>
+                    <button type="submit" class="btn">Save Changes</button>
+                </form>
+            </div>
+
+            <div id="password-view" class="content-view">
+                 <div class="view-header">
+                    <h2>Password Manager</h2>
+                </div>
+                <form class="settings-form">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password">
+                    </div>
+                    <button type="submit" class="btn">Update Password</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo"><img src="images/logo1.png" alt="Footer Logo"></div>
+           <p>Lumbac, Pulilan, Bulacan</p>
+           <p>Email: balaialegria@gmail.com</p>
+           <p>Phone: +63 969 621 1613 | +63 917 875 8765</p>
+           <div class="social">
+           <a href="https://www.facebook.com/balaialegria">Facebook</a> |
+           <a href="https://www.instagram.com/balaialegria/">Instagram</a> |
+           <a href="https://www.tiktok.com/@balai.alegria">Tiktok</a>
+        </div>
+    </footer>
+    
+    <script src="account.js"></script>
+</body>
+</html>

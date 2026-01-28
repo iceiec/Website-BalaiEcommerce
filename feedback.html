@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Feedback - Balai Alegria</title>
+    <link rel="icon" type="image/png" href="images/logo1.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar solid-bg">
+        <div class="logo"><a href="homepage.html"><img src="images/logo4.png" alt="Logo"></a></div>
+        <nav>
+            <a href="homepage.html">Home</a>
+            <a href="homepage.html#about">About</a>
+            <a href="accommodations.html">Accommodations</a>
+            <a href="rates.html">Rates & Packages</a>
+            <a href="events.html">Events</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="amenities.html">Amenities</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="my_account.html">My Account</a>
+        </nav>
+        <a href="booking.html" class="book-btn">Book Now</a>
+    </header>
+
+    <section class="page-header" style="background-image: url('images/Resort/Playground2.jpg');">
+        <h1>Share Your Experience</h1>
+    </section>
+
+    <main class="container">
+        <div class="feedback-container">
+            <h2>We Value Your Feedback</h2>
+            <p>Thank you for staying with us at Balai Alegria. Please take a moment to tell us about your experience to help us improve our services.</p>
+            
+            <form class="feedback-form">
+                <div class="form-group">
+                    <label>Your Overall Rating</label>
+                    <div class="star-rating">
+                        <span class="star" data-value="5">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="1">&#9733;</span>
+                    </div>
+                    <input type="hidden" name="rating" id="rating-value" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="booking-id">Booking ID</label>
+                    <input type="text" id="booking-id" value="#SDOT7412DF" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="feedback-comments">Your Comments</label>
+                    <textarea id="feedback-comments" rows="6" placeholder="Tell us about your stay, what you enjoyed, and what we could do better..."></textarea>
+                </div>
+
+                <button type="submit" class="btn">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+         <div class="footer-logo"><img src="images/logo1.png" alt="Footer Logo"></div>
+            <p>Lumbac, Pulilan, Bulacan</p>
+            <p>Email: balaialegria@gmail.com</p>
+            <p>Phone: +63 969 621 1613 | +63 917 875 8765</p>
+            <div class="social">
+            <a href="https://www.facebook.com/balaialegria">Facebook</a> |
+            <a href="https://www.instagram.com/balaialegria/">Instagram</a> |
+            <a href="https://www.tiktok.com/@balai.alegria">Tiktok</a>
+        </div>
+    </footer>
+    
+    <script src="feedback.js"></script>
+</body>
+</html>

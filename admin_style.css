@@ -1,0 +1,259 @@
+/* Balai Alegria - Admin Portal Stylesheet */
+
+:root {
+  --primary-color: #c3996c;
+  --primary-hover: #a77c50;
+  --dark-bg: #2e2e2e;
+  --sidebar-accent: #a77c50; /* A slightly different accent for admin */
+  --light-bg: #f8f9fa;
+  --text-dark: #343a40;
+  --text-light: #6c757d;
+  --border-color: #dee2e6;
+  --white: #ffffff;
+  --positive: #28a745;
+  --negative: #dc3545;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+/* --- Login Page --- */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('images/image10.jpg') no-repeat center center/cover;
+}
+.login-box {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 350px;
+}
+.login-box .logo { width: 100px; margin-bottom: 20px; }
+.login-box h2 { margin-bottom: 20px; font-weight: 600; }
+.login-box input {
+  width: 90%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-family: inherit;
+}
+.login-box .btn { width: 100%; margin-top: 15px; }
+
+/* --- Buttons --- */
+.btn {
+  background: var(--primary-color);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.btn:hover { background: var(--primary-hover); }
+
+/* --- Dashboard Layout --- */
+.dashboard-container { display: flex; min-height: 100vh; }
+
+/* --- Sidebar --- */
+.sidebar {
+  width: 260px;
+  background-color: var(--dark-bg);
+  color: var(--white);
+  flex-shrink: 0;
+}
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+.sidebar-header img { height: 60px; filter: brightness(0) invert(1); }
+.sidebar-nav { padding-top: 20px; }
+.sidebar-nav .nav-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  color: #ccc;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+.sidebar-nav .nav-item:hover { background-color: #383838; color: var(--white); }
+.sidebar-nav .nav-item.active { background-color: var(--sidebar-accent); color: var(--white); font-weight: 500; }
+.nav-item .icon { margin-right: 15px; font-size: 20px; width: 24px; text-align: center; }
+
+/* --- Main Content Area --- */
+.main-content { flex-grow: 1; }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+.header-title h1 { margin: 0; font-size: 24px; }
+.header-title p { margin: 5px 0 0; color: var(--text-light); }
+.user-info { display: flex; align-items: center; gap: 15px; }
+.logout-btn { color: var(--primary-color); text-decoration: none; font-weight: 500; }
+
+/* --- Content & Cards --- */
+.content-section { padding: 30px; }
+.card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+  border-bottom: 1px solid var(--border-color);
+}
+.card-header h2 { margin: 0; font-size: 20px; }
+.card-body { padding: 25px; }
+
+/* --- KPI Cards (Dashboard) --- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.kpi-card {
+  background-color: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+.kpi-card h3 { margin: 0 0 10px; font-size: 16px; color: var(--text-light); }
+.kpi-card p { margin: 0 0 10px; font-size: 28px; font-weight: 600; }
+.kpi-change { font-size: 14px; }
+.kpi-change.positive { color: var(--positive); }
+.kpi-change.negative { color: var(--negative); }
+.kpi-change.neutral { color: var(--text-light); }
+
+/* --- Dashboard Grid (Chart & Feed) --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+.activity-feed { list-style: none; padding: 0; margin: 0; }
+.activity-feed li { padding: 10px 0; border-bottom: 1px solid var(--border-color); font-size: 14px; }
+.activity-feed li:last-child { border-bottom: none; }
+
+/* --- Table Styles --- */
+.table-container { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 15px 25px; text-align: left; border-bottom: 1px solid var(--border-color); }
+thead th { background-color: var(--light-bg); font-weight: 600; color: var(--text-light); text-transform: uppercase; font-size: 12px; }
+tbody tr:last-child td { border-bottom: none; }
+.actions { display: flex; gap: 10px; }
+.btn-action {
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    background-color: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.btn-action.edit { color: var(--primary-color); }
+.btn-action.delete { color: var(--negative); }
+
+/* --- Additions for Bookings, Reports, & Settings Pages --- */
+
+/* Filter Controls (Bookings Page) */
+.filter-controls {
+    display: flex;
+    gap: 15px;
+}
+.filter-controls input, .filter-controls select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    width: 200px;
+    font-family: inherit;
+}
+
+/* Action Buttons with Icons (Bookings Page) */
+.btn-action.view { color: #007bff; }
+.btn-action.confirm { color: var(--positive); }
+.btn-action.cancel { color: var(--negative); }
+.btn-action { font-size: 18px; }
+
+/* Status Badges */
+.status {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  text-transform: capitalize;
+}
+.status.confirmed { background-color: #28a745; }
+.status.pending { background-color: #ffc107; color: var(--text-dark); }
+.status.completed { background-color: #17a2b8; }
+.status.cancelled { background-color: #dc3545; }
+
+/* Tabs (Settings Page) */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    padding: 0 25px;
+}
+.tab-link {
+    padding: 15px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-light);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px; /* Aligns with the card border */
+}
+.tab-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+.tab-content {
+    display: none;
+    padding: 25px;
+}
+.tab-content.active {
+    display: block;
+}
+
+/* Settings Form */
+.settings-form {
+    max-width: 600px;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
