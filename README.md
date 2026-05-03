@@ -1,5 +1,24 @@
 # Balai Project
 
+## Tools and Languages Used
+
+The following tools and languages were used to develop this project:
+
+- **Languages:**
+  - HTML
+  - CSS
+  - JavaScript (Frontend)
+  - Node.js (Backend)
+
+- **Tools and Frameworks:**
+  - PayMongo API (for payment integration)
+  - npm (Node Package Manager)
+  - Express.js (Backend framework)
+
+- **Other Resources:**
+  - Images and assets for the resort
+  - Basic HTML templates for public and admin pages
+
 ## Project Overview
 This project appears to be a web-based application for managing a resort or similar facility. It includes features for bookings, staff management, and public-facing pages for visitors.
 
@@ -120,5 +139,3 @@ The project is organized as follows:
 - Follow the proposed folder structure.
 - Document any changes made to the project.
 
----
-This README file provides an overview of the project and suggests improvements to the folder structure for better organization.
