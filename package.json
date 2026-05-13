@@ -1,0 +1,9 @@
+{
+  "name": "balai-orpin-static",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/copy-images.js",
+    "vercel-build": "npm run build"
+  }
+}
