@@ -1,0 +1,59 @@
+/* Balai Alegria - FINAL Unified Stylesheet (copied into public/) */
+
+:root {
+  --primary-color: #c3996c;
+  --primary-hover: #a77c50;
+  --dark-text: #2e2e2e;
+  --body-text: #3a3a3a;
+  --light-bg: #fcfaf8;
+  --white: #ffffff;
+  --footer-bg: #2e2e2e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  background-color: var(--white);
+  color: var(--body-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 600; color: var(--dark-text); }
+
+p { font-weight: 300; font-size: 1.1rem; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; text-align: center; }
+
+.btn { background: var(--primary-color); border: none; padding: 12px 28px; border-radius: 8px; color: var(--white); font-weight: bold; cursor: pointer; font-size: 16px; text-decoration: none; display: inline-block; transition: background-color 0.3s ease, transform 0.2s ease; }
+.btn:hover { background: var(--primary-hover); transform: translateY(-2px); }
+
+.navbar { position: absolute; top: 0; left: 0; width: 100%; box-sizing: border-box; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; z-index: 1000; transition: background-color 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease; color: var(--white); }
+.navbar.solid-bg { position: fixed; background-color: var(--white); color: var(--dark-text); padding: 15px 40px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+.navbar .logo img { height: 100px; width: auto; filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.6)); transition: height 0.4s ease; }
+.navbar.solid-bg .logo img { height: 80px; filter: none; }
+.navbar nav { flex: 1; text-align: center; margin-left: 50px; }
+.navbar nav a { margin: 0 15px; text-decoration: none; color: inherit; font-weight: 500; padding-bottom: 5px; position: relative; }
+.navbar nav a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+.navbar nav a:hover::after, .navbar nav a.active::after { width: 100%; }
+.navbar .book-btn { background: var(--primary-color); border: none; padding: 10px 20px; border-radius: 8px; color: var(--white); font-weight: bold; cursor: pointer; text-decoration: none; transition: background-color 0.3s ease; }
+.navbar .book-btn:hover { background-color: var(--primary-hover); }
+
+.slideshow-container { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+.slideshow-container .slides { position: absolute; top: 0; left: 0; width: 100%; height: 100vh; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; filter: sepia(60%) hue-rotate(-10deg) brightness(0.8) saturate(1.2); }
+.slideshow-container .slides.active { opacity: 1; }
+.slideshow-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: var(--white); text-shadow: 0px 2px 8px rgba(0,0,0,0.7); z-index: 10; }
+.slideshow-text h1 { font-size: 3.5rem; margin: 0 0 10px; color: var(--white); }
+.slideshow-text p { font-size: 1.5rem; margin: 0 0 20px; color: var(--white); font-weight: 300; }
+
+.page-header { height: 50vh; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white); text-shadow: 0px 3px 8px rgba(0,0,0,0.7); position: relative; }
+.page-header::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+.page-header h1 { font-size: 4rem; color: var(--white); z-index: 1; }
+
+section { padding: 80px 20px; }
+.light-bg { background: var(--light-bg); }
+
+footer { padding: 40px 20px; text-align: center; background: var(--footer-bg); color: var(--white); }
+
+/* End of copied stylesheet */
